@@ -1,10 +1,21 @@
 <template>
     <div>
-      <h1>My Component</h1>
+      <h1>My Cars</h1>
       <button @click="togglePosts">{{ showPosts ? 'Hide Posts' : 'Show Posts' }}</button>
-      <ul v-if="showPosts">
-        <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
-      </ul>
+      <table v-if="showPosts">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="post in posts" :key="post.id">
+            <td>{{ post.id }}</td>
+            <td>{{ post.title }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </template>
   

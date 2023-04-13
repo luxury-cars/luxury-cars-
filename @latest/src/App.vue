@@ -1,58 +1,41 @@
 <template>
   <div>
-    <Navbar />
-    <Cars />
-    <!-- rest of your app -->
+    <nav>
+      <router-link to="/">Home</router-link>
+    <router-link to="/cars">Cars</router-link>
+    <router-link to="/login" v-if="!isLoggedIn">Login</router-link>
+    <router-link to="/signup" v-if="!isLoggedIn">Sign Up!</router-link>
+    <button @click="handleLogOut" v-if="isLoggedIn">Sign out!</button>
+    </nav>
+    
+    <router-view/>
+
+    
   </div>
 </template>
-
-<script>
-import Navbar from './components/Navbar.vue'
-import Cars from './components/Cars.vue';
-export default {
-  name: 'App',
-  components: {
-    Navbar,
-    Cars
+<script setup>
+import { onMounted,ref } from 'vue';
+ import { getAuth, onAuthStateChanged,signOut } from '@firebase/auth';
+import router from './router/Router';
+ const isLoggedIn = ref(false)
+ let auth;
+ onMounted(()=>{
+  auth = getAuth();
+  onAuthStateChanged(auth , (user)=>{
+    if(user){
+    isLoggedIn.value=true
   }
+    else {
+      isLoggedIn.value=false
+    }
+  })
+ })
+const handleLogOut = ()=>{
+signOut(auth).then(()=>{
+  router.push("/")
+})
 }
+
 </script>
 
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background-color: #333;
-  color: #fff;
-}.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
