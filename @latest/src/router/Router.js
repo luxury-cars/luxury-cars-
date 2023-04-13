@@ -4,6 +4,7 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import Home from '../views/Home.vue'
 import { getAuth,onAuthStateChanged} from "firebase/auth";
+import swal from 'sweetalert';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -38,7 +39,13 @@ router.beforeEach(async (to,from,next)=>{
     if(await getCurrentUser()){
       next();
     }else{
-      alert("You dont have access!");
+      swal({
+        title: "Access Denied",
+        text: "You don't have permission to access this route.",
+        icon: "error",
+        button: "OK",
+      });
+     
       next("/")
     }
   }
