@@ -41,7 +41,7 @@ router.beforeEach(async (to,from,next)=>{
     }else{
       swal({
         title: "Access Denied",
-        text: "You don't have permission to access this route.",
+        text: "You should be logged in!",
         icon: "error",
         button: "OK",
       });

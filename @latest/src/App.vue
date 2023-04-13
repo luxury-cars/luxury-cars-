@@ -17,6 +17,7 @@
 import { onMounted,ref } from 'vue';
  import { getAuth, onAuthStateChanged,signOut } from '@firebase/auth';
 import router from './router/Router';
+import swal from 'sweetalert';
  const isLoggedIn = ref(false)
  let auth;
  onMounted(()=>{
@@ -32,6 +33,12 @@ import router from './router/Router';
  })
 const handleLogOut = ()=>{
 signOut(auth).then(()=>{
+  swal({
+  title: "Logged Out",
+  text: "You have successfully logged out.",
+  icon: "info",
+  button: "OK",
+});
   router.push("/")
 })
 }

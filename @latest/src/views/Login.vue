@@ -22,12 +22,19 @@ import { ref } from "vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "vue-router";
 import router from "../router/Router";
+import swal from 'sweetalert';
 const email = ref("")
 const password = ref ("")
 const errMsg = ref() 
 const logIn = ()=>{
 signInWithEmailAndPassword(getAuth(),email.value,password.value)
-.then((data)=>{console.log('succesfully sgn in');
+.then((data)=>{
+swal({
+  title: "Welcome!",
+  text: "You have successfully signed in.",
+  icon: "success",
+  button: "OK",
+});
 router.push('/cars')
 })
 .catch((error)=>{console.log(error)
