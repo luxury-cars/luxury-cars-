@@ -2,8 +2,8 @@ const mysql = require('mysql2');
 const config = {
     host: 'localhost',
     user: 'root',
-    password: 'root', 
-    database: 'reactmysql'
+    password: 'admin', 
+    database: 'vuecars'
   };
 
 const connection = mysql.createConnection(config)
@@ -17,21 +17,21 @@ connection.connect((err)=>{
 })
 
 const getAllProducts = (callback) => {
-    const sql='select * from product'
+    const sql='select * from cars'
    connection.query(sql,(err,results)=>{
     if(err) console.log(err)
     else callback(err,results)
    })
 };
 const postall=(callback,data) => {  
-    const sql="INSERT INTO  `product` SET ?"
+    const sql="INSERT INTO  `cars` SET ?"
    connection.query(sql,data,(err,results)=>{
     if(err) console.log(err)
     else callback(err,results)
    })
 };
 const deletone=(callback,id) => {
-    const sql='DELETE FROM product WHERE id= ?'
+    const sql='DELETE FROM cars WHERE id= ?'
    connection.query(sql,id,(err,results)=>{
     if(err) console.log(err)
     else callback(err,results)
