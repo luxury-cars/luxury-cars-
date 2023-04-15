@@ -29,8 +29,7 @@
     <img src="https://cdn.cookielaw.org/logos/fe84cc87-b4fb-45f0-a0b6-29587ed7929f/0904edec-04ae-45b7-b595-694967c10b44/ea068f53-32ce-4e10-95b3-a09a39aca444/maserati_logo_original.png" alt="Honda Logo" class="h-32">
   </div>
  
-  
-  
+
 </div>
 
 </template>

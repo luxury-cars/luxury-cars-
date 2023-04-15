@@ -1,3 +1,5 @@
+
+
 <template>
    <div class="text-center">
     <h1 class="text-3xl font-bold mt-5 mb-3">Luxry Cars For Sale</h1>
@@ -18,17 +20,31 @@
   <div class="mx-auto max-w-full px-24 -mt-10 sm:px-48 sm:py-24 lg:px-10 ">
     <h2 class="sr-only">Products</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 h-[930px]  lg:grid-cols-3 xl:grid-cols-4 gap-1 xl:gap-7">
-      <template v-for="car in dataCars">
-        <a href="#" class="group relative overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg">
+    <div  class="grid grid-cols-1 sm:grid-cols-2 h-[930px] lg:grid-cols-3 xl:grid-cols-4 gap-1 xl:gap-7">
+  <template  v-for="car in dataCars">
+    <div  class="group relative overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-lg">
+      <div class="absolute bottom-[210px]  left-[100px] flex w-full justify-center pb-4">
+   
+          <router-link  class="bg-black hover:bg-slate-800 text-white font-bold py-2 px-4 rounded-full" to="/onecard" tag="button">Contact <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-5 h-5 inline-block mr-2">
+            <g fill="#FFFFFF">
+              <path d="M55.5 18.8L53.6 17l-17.5 17.5c-2.2 2.2-5.9 2.2-8.1 0L10.3 17l-1.9 1.9L21.5 32l-13.1 13.1 1.9 1.9L36 34.5c2.2-2.2 5.9-2.2 8.1 0l13.2 13.2 1.9-1.9L42.3 32l13.2-13.2z"/>
+              <path d="M51.8 50.4H12.3c-2.3 0-4.2-1.9-4.2-4.2V18c0-2.3 1.9-4.2 4.2-4.2h39.5c2.3 0 4.2 1.9 4.2 4.2v28.2c0 2.3-1.9 4.2-4.2 4.2zM12.2 16.5c-.8 0-1.4.6-1.4 1.4v28.2c0 .8.6 1.4 1.4 1.4h39.5c.8 0 1.4-.6 1.4-1.4V17.9c0-.8-.6-1.4-1.4-1.4H12.2z"/>
+            </g>
+          </svg></router-link>
+       
+       
+      
+      </div>
+
+          
           <div class="aspect-w-16 aspect-h-9 w-full">
-            <img :src="car.image_url" :alt="karhba" class="h-full w-full object-cover object-center group-hover:opacity-75 transition duration-300 ease-in-out">
+            <img :src="car.image_url" :alt="karhba" class="h-full w-full object-cover object-center ">
           </div>
           <div class="px-4 py-4 absolute bottom-0 w-full bg-gray-900 bg-opacity-50">
-            <h3 class="mt-2 text-sm font-medium text-white group-hover:text-gray-300">{{car.make}}</h3>
-            <p class="mt-1 text-lg font-medium text-white group-hover:text-gray-300">{{car.price}}</p>
+            <h3 class="mt-2 text-l font-medium text-white ">{{car.make}}</h3>
+            <p class="mt-1 text-lg font-medium text-white group-hover:text-gray-300">{{car.price}}$</p>
           </div>
-        </a>
+        </div>
       </template>
     </div>
   </div>
@@ -46,7 +62,9 @@
 
 <script>
 import axios from 'axios';
+
 export default {
+ 
   data(){
     return{
       dataCars :[]
@@ -60,6 +78,12 @@ export default {
     }).catch((err)=>{
       console.log(err);
     })
+
+  },
+  methods: {
+    navigateToAbout() {
+      router.push({ name: "about" });
+    }
 
   }
 }
