@@ -19,8 +19,7 @@ app.get('/api/product',(req,res)=> {
    }) 
 })
   
-app.post('/api/product/add',(req,res)=>{
-    
+app.post('/api/product/add',(req,res)=>{_
   postall((err,results)=>{
    if(err) res.status(500).send(err)
    else res.status(200).send(results)
