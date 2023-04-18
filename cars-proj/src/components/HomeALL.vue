@@ -2,7 +2,7 @@
 import BrandCar from './BrandCar.vue';
 import CarsNews from './CarsNews.vue';
 import MainCar from './MainCar.vue';
-import Crud from './Crud.vue';
+
 
 
 export default {
@@ -11,7 +11,7 @@ export default {
     MainCar,
     BrandCar,
     CarsNews,
-    Crud
+   
 }
 }
 </script>
@@ -21,5 +21,5 @@ export default {
   <MainCar/>
   <BrandCar/>
   <CarsNews/>
-  <Crud/>
+  
 </template>

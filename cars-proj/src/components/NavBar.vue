@@ -45,20 +45,14 @@
 
             <div class="relative ml-20">
   <div class="flex items-center"> 
-    <button type="button"
-      class="flex  text-white text-l mr-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-      id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-      <p
-        class="bg-red-600 text-white font-medium py-2 px-4 rounded-md shadow-md hover:bg-red-600 transition-colors duration-300">
-        SELL</p>
-    </button>
-    <button type="button"
+    
+    <!-- <button type="button" @click="handleClick" v-if="show"
       class="flex  text-white text-l mr-4 ml-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
       id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-      <p
+      <p 
         class="bg-red-600 text-white font-medium py-2 px-4 rounded-md shadow-md hover:bg-red-600 transition-colors duration-300">
         Login </p>
-    </button>
+    </button> -->
   </div>
 </div>
           </div>
@@ -90,7 +84,7 @@
 
 </template>
 
-<script>
+<script setup>
 import { RouterLink } from 'vue-router'
 
 </script>

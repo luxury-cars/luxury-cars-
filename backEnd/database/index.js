@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 const config = {
     host: 'localhost',
     user: 'root',
-    password: 'lybov123', 
+    password: 'root', 
     database: 'vuecars'
   };
 
@@ -46,4 +46,15 @@ const putone=(callback,data,id) => {
    }) 
 };
 
-module.exports= { getAllProducts, postall,deletone,putone };
+const getCars = (emailSeller, callback) => {
+    const sql = 'SELECT * FROM cars WHERE emailSeller = ?';
+    connection.query(sql, [emailSeller], (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        callback(err, results);
+      }
+    });
+  };
+
+module.exports= { getAllProducts, postall,deletone,putone,getCars };

@@ -1,6 +1,6 @@
 const express = require('express');
 const cors =require('cors');
-const { getAllProducts, postall,deletone,putone} = require('../backEnd/database/index');
+const { getAllProducts, postall,deletone,putone, getCars} = require('../backEnd/database/index');
 const port = 5002;
 const app = express()
 app.use(express.json())
@@ -19,7 +19,7 @@ app.get('/api/product',(req,res)=> {
    }) 
 })
   
-app.post('/api/product/add',(req,res)=>{_
+app.post('/api/product/add',(req,res)=>{
   postall((err,results)=>{
    if(err) res.status(500).send(err)
    else res.status(200).send(results)
@@ -40,7 +40,16 @@ app.put('/api/rent/update/:id',(req,res)=>{
   },[req.body],[req.params.id])
 })
 
-
+app.post('/api/product/getCars', (req, res) => {
+  const emailSeller = req.body.emailSeller;
+  getCars(emailSeller, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Failed to get cars' });
+    } else {
+      res.json(results);
+    }
+  });
+});
 
 
 app.listen(port, ()=>{
