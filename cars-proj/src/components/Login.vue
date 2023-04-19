@@ -41,7 +41,7 @@
             <button type="submit" class="w-full btn btn-indigo transition duration-150 ease-in-out" @click.prevent="logIn">
               Sign in
             </button>
-            <button @click="getItemByUserId" >LOG</button>
+         
           </div>
         </form>
       </div>

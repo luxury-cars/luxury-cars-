@@ -5,14 +5,14 @@
       <!-- other navigation links/buttons -->
     </NavBar>
     <button type="button" @click="handleClick" v-if="show"
-      class="flex  text-white text-l mr-4 ml-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+      class="flex  text-white text-l  absolute top-3 left-[1350px] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
       id="user-menu-button" aria-expanded="false" aria-haspopup="true">
       <p 
         class="bg-red-600 text-white font-medium py-2 px-4 rounded-md shadow-md hover:bg-red-600 transition-colors duration-300">
         Login </p>
     </button>
     <button type="button" @click="handleLogOut" v-if="isLoggedIn"
-      class="flex  text-white text-l mr-4 ml-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+      class="flex  text-white text-l  absolute top-3 left-[1350px] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
       id="user-menu-button" aria-expanded="false" aria-haspopup="true">
       <p 
         class="bg-red-600 text-white font-medium py-2 px-4 rounded-md shadow-md hover:bg-red-600 transition-colors duration-300">
@@ -24,12 +24,7 @@
 </template>
 
 <style scoped>
-.navbar {
-  background-color: #ffffffc3;
-  padding: 10px;
-  border: none;
-  box-shadow: none;
-}
+
 </style> 
 <script setup>
 import NavBar from './components/NavBar.vue';

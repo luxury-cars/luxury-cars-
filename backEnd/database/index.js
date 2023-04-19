@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 const config = {
     host: 'localhost',
     user: 'root',
-    password: 'root', 
+    password: 'admin', 
     database: 'vuecars'
   };
 
@@ -39,7 +39,7 @@ const deletone=(callback,id) => {
 };
 const putone=(callback,data,id) => {
     console.log(data[0],'tgedata');
-    const sql='UPDATE product SET ? WHERE id=?'
+    const sql='UPDATE cars SET ? WHERE id=?'
    connection.query(sql,[data[0],id],(err,results)=>{
     if(err) console.log(err)
     else callback(err,results)

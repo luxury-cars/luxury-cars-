@@ -2,9 +2,9 @@
 
 <div class="form-container">
 
-     <div class="flex flex-col items-center justify-center h-screen">
+     <div class="flex flex-col items-center -mt-32 justify-center   ">
   <div class="all" style="margin-top: 20vh">
-    <form @submit.prevent="submitForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form @submit.prevent="submitForm" class="bg-white shadow-md rounded px-8 pt-6 w-[500px] pb-8 mb-4">
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="make">
           Make
@@ -65,7 +65,7 @@
         <label class="block text-gray-700 font-bold mb-2">Price:</label>
         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" v-model="price" type="text">
       </div>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Add Car</button>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  ml-40 rounded focus:outline-none focus:shadow-outline" type="submit">Add Car</button>
     </form>
   </div>
 </div>

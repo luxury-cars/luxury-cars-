@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-[580px]">
     <button 
       class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded"
       @click="toggleCrud"
@@ -12,7 +12,7 @@
       
     </div>
     <button 
-      class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded"
+      class="py-2 px-4  ml-10 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded"
       @click="toggleCars"
     >
       {{ showCars ? 'Return to the dash' : 'See your cars' }}
